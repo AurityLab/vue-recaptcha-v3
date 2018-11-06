@@ -27,6 +27,9 @@
     "/README.md",
     "/LICENSE"
   ],
+  "peerDependencies": {
+    "vue": "^2.5.17"
+  },
   "devDependencies": {
     "@auritylab/code-style-tslint": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
