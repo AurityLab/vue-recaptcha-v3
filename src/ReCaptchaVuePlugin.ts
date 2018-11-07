@@ -1,25 +1,21 @@
 import {load as loadReCaptcha} from 'recaptcha-v3'
 import _Vue from 'vue'
-import {PluginFunction, PluginObject} from 'vue'
-import {ReCaptchaExecute} from './functions/ReCaptchaExecute'
 import {IReCaptchaOptions} from './IReCaptchaOptions'
 
-export class ReCaptchaVuePlugin implements PluginObject<IReCaptchaOptions> {
-  public install: PluginFunction<IReCaptchaOptions>
+export function VueReCaptcha(Vue: typeof _Vue, options: IReCaptchaOptions) {
+  const plugin = new ReCaptchaVuePlugin()
 
-  public constructor() {
-    this.install = this.buildInstallMethod()
-  }
+  plugin.initializeReCaptcha(options.siteKey).then((wrapper) => {
+    console.log(wrapper)
 
-  private buildInstallMethod(): PluginFunction<IReCaptchaOptions> {
-    return (Vue: typeof _Vue, options) => {
-      this.initializeReCaptcha(options.siteKey).then((reCaptchaWrapper) => {
-        Vue.prototype.$recaptcha = new ReCaptchaExecute(reCaptchaWrapper).execute
-      })
+    Vue.prototype.$recaptcha = (action: string) => {
+      return wrapper.execute(action)
     }
-  }
+  })
+}
 
-  private async initializeReCaptcha(siteKey: string) {
+class ReCaptchaVuePlugin {
+  public async initializeReCaptcha(siteKey: string) {
     const reCaptchaWrapper = await loadReCaptcha(siteKey)
     return reCaptchaWrapper
   }
