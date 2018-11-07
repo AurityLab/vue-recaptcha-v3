@@ -1,5 +1,5 @@
 {
   "extends": [
-    "@auritylab/code-style-tslint"
+    "@auritylab/tslint-config-base"
   ]
 }
