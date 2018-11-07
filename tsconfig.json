@@ -10,9 +10,6 @@
     "lib": [
       "es6",
       "dom"
-    ],
-    "typeRoots": [
-      "src/types"
     ]
   },
 
