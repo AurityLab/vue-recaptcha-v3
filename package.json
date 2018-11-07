@@ -1,35 +1,35 @@
 {
   "name": "vue-recaptcha-v3",
   "version": "1.0.0",
-  "main": "dist/ReCaptchaVuePlugin.js",
-  "types": "dist/ReCaptchaVuePlugin.ts",
-  "author": "AurityLab <info@auritylab.com>",
   "keywords": [
+    "captcha",
     "recaptcha",
     "recaptcha-v3",
-    "captcha",
     "vue",
     "vuejs"
   ],
-  "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/AurityLab/recaptcha-v3/issues"
+    "url": "https://github.com/AurityLab/vue-recaptcha-v3/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/AurityLab/vue-recaptcha-v3"
   },
-  "scripts": {
-    "build": "tsc",
-    "demo:webpack:server": "webpack-dev-server --config demo/webpack.config.js --progress --public --host 0.0.0.0"
-  },
+  "license": "Apache-2.0",
+  "author": "AurityLab <info@auritylab.com>",
   "files": [
     "/dist",
     "/README.md",
     "/LICENSE"
   ],
-  "peerDependencies": {
-    "vue": "^2.5.17"
+  "main": "dist/ReCaptchaVuePlugin.js",
+  "types": "dist/ReCaptchaVuePlugin.ts",
+  "scripts": {
+    "build": "tsc",
+    "demo:webpack:server": "webpack-dev-server --config demo/webpack.config.js --progress --public --host 0.0.0.0"
+  },
+  "dependencies": {
+    "recaptcha-v3": "^1.0.2"
   },
   "devDependencies": {
     "@auritylab/tslint-config-base": "^1.0.0",
@@ -42,7 +42,7 @@
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
   },
-  "dependencies": {
-    "recaptcha-v3": "^1.0.2"
+  "peerDependencies": {
+    "vue": "^2.5.17"
   }
 }
