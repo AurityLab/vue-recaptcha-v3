@@ -32,14 +32,17 @@
     "vue": "^2.5.17"
   },
   "devDependencies": {
-    "@auritylab/code-style-tslint": "^1.0.0",
+    "@auritylab/tslint-config-base": "^1.0.0",
     "html-webpack-plugin": "^3.2.0",
     "ts-loader": "^5.3.0",
     "tslint": "^5.11.0",
     "typescript": "^3.1.6",
+    "vue": "^2.5.17",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10",
-    "vue": "^2.5.17"
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "recaptcha-v3": "^1.0.2"
   }
 }
