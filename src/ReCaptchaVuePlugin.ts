@@ -6,9 +6,7 @@ export function VueReCaptcha(Vue: typeof _Vue, options: IReCaptchaOptions) {
   const plugin = new ReCaptchaVuePlugin()
 
   plugin.initializeReCaptcha(options.siteKey).then((wrapper) => {
-    console.log(wrapper)
-
-    Vue.prototype.$recaptcha = (action: string) => {
+    Vue.prototype.$recaptcha = (action: string): Promise<string> => {
       return wrapper.execute(action)
     }
   })
@@ -16,7 +14,13 @@ export function VueReCaptcha(Vue: typeof _Vue, options: IReCaptchaOptions) {
 
 class ReCaptchaVuePlugin {
   public async initializeReCaptcha(siteKey: string) {
-    const reCaptchaWrapper = await loadReCaptcha(siteKey)
-    return reCaptchaWrapper
+    return await loadReCaptcha(siteKey)
+  }
+}
+
+declare module 'vue/types/vue' {
+  // tslint:disable-next-line:interface-name
+  interface Vue {
+    $recaptcha(action: string): Promise<string>
   }
 }
