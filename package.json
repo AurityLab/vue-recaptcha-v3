@@ -1,7 +1,8 @@
 {
   "name": "vue-recaptcha-v3",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/ReCaptchaVuePlugin.js",
+  "types": "dist/ReCaptchaVuePlugin.ts",
   "author": "AurityLab <info@auritylab.com>",
   "keywords": [
     "recaptcha",
