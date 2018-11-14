@@ -23,7 +23,7 @@
     "/LICENSE"
   ],
   "main": "dist/ReCaptchaVuePlugin.js",
-  "types": "dist/ReCaptchaVuePlugin.ts",
+  "types": "dist/ReCaptchaVuePlugin.d.ts",
   "scripts": {
     "build": "tsc",
     "demo:webpack:server": "webpack-dev-server --config demo/webpack.config.js --progress --public --host 0.0.0.0"
