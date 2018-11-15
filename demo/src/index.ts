@@ -6,8 +6,12 @@ Vue.use(VueReCaptcha, {siteKey: '6LfC6HgUAAAAAEtG92bYRzwYkczElxq7WkCoG4Ob'})
 new Vue({
   methods: {
     recaptcha() {
-      this.$recaptcha('login').then((token: string) => {
-        console.log(token) // Will print the token
+      console.log('recaptcha clicked')
+      this.$recaptchaLoaded().then(() => {
+        console.log('recaptcha loaded')
+        this.$recaptcha('login').then((token: string) => {
+          console.log(token) // Will print the token
+        })
       })
     }
   },
