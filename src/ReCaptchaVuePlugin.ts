@@ -15,7 +15,7 @@ export function VueReCaptcha(Vue: typeof _Vue, options: IReCaptchaOptions) {
       loadedWaiters.push(resolve)
   })
 
-  plugin.initializeReCaptcha(options.siteKey).then((wrapper) => {
+  plugin.initializeReCaptcha(options).then((wrapper) => {
     recaptchaLoaded = true
     Vue.prototype.$recaptcha = (action: string): Promise<string> => {
       return wrapper.execute(action)
@@ -25,8 +25,8 @@ export function VueReCaptcha(Vue: typeof _Vue, options: IReCaptchaOptions) {
 }
 
 class ReCaptchaVuePlugin {
-  public async initializeReCaptcha(siteKey: string) {
-    return await loadReCaptcha(siteKey)
+  public async initializeReCaptcha(options: IReCaptchaOptions) {
+    return await loadReCaptcha(options.siteKey, options.loaderOptions)
   }
 }
 
