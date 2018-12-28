@@ -24,7 +24,8 @@ A simple and easy to use reCAPTCHA (v3 only) library for Vue based on [reCAPTCHA
 import Vue from 'vue'
 import { VueReCaptcha } from 'vue-recaptcha-v3'
 
-vue.use(VueReCaptcha, { siteKey: '<site key>' })
+// For more options see below
+Vue.use(VueReCaptcha, { siteKey: '<site key>' })
 
 new Vue({
   methods: {
@@ -36,5 +37,28 @@ new Vue({
   },
   template: '<button @click="recaptcha">Execute recaptcha</button>'
 })
+```
 
+## Options
+This plugin offers optional options to configure the behavior of some parts.
+
+Available options:
+
+|Name|Description|Type|Default value
+|----|-----------|----|-------------
+|siteKey|The site key for your domain from Google.|*string*|*none*
+|loaderOptions|Optional options for the [recaptcha-v3](https://github.com/AurityLab/recaptcha-v3) loader. The available options are described [here](https://github.com/AurityLab/recaptcha-v3/tree/v1.2.0#usage-1).|*object*|`null`
+
+### Usage
+To use the options just pass an object to the `Vue.use(...)` method. For example:
+```javascript
+import Vue from 'vue'
+import { VueReCaptcha } from 'vue-recaptcha-v3'
+
+Vue.use(VueReCaptcha, {
+  siteKey: '<site key>',
+  loaderOptions: {
+    useRecaptchaNet: true
+  }
+})
 ```
