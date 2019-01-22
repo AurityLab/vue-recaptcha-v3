@@ -1,6 +1,6 @@
 # Vue reCAPTCHA-v3
-![npm](https://img.shields.io/npm/v/vue-recaptcha-v3.svg) 
-![npm type definitions](https://img.shields.io/npm/types/vue-recaptcha-v3.svg)
+[![npm](https://img.shields.io/npm/v/vue-recaptcha-v3.svg)](https://www.npmjs.com/package/vue-recaptcha-v3)
+[![npm type definitions](https://img.shields.io/npm/types/vue-recaptcha-v3.svg)](https://www.npmjs.com/package/vue-recaptcha-v3)
 
 A simple and easy to use reCAPTCHA (v3 only) library for Vue based on [reCAPTCHA-v3](https://github.com/AurityLab/recaptcha-v3).
 
