@@ -2687,9 +2687,9 @@ readdirp@^2.0.0:
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
 
-recaptcha-v3@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/recaptcha-v3/-/recaptcha-v3-1.2.1.tgz#bd0626163566321c13893b773f5146c803ba0528"
+recaptcha-v3@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/recaptcha-v3/-/recaptcha-v3-1.3.0.tgz#a1bca2b05f84b270d2357faa73f1e2446560ef9e"
 
 regex-not@^1.0.0, regex-not@^1.0.2:
   version "1.0.2"
