@@ -29,7 +29,7 @@
     "demo:webpack:server": "webpack-dev-server --config demo/webpack.config.js --progress --public --host 0.0.0.0"
   },
   "dependencies": {
-    "recaptcha-v3": "^1.4.0"
+    "recaptcha-v3": "^1.5.0"
   },
   "devDependencies": {
     "@auritylab/tslint-config-base": "^1.0.1",
