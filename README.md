@@ -4,19 +4,19 @@
 
 A simple and easy to use reCAPTCHA (v3 only) library for Vue based on [reCAPTCHA-v3](https://github.com/AurityLab/recaptcha-v3).
 
- ## Install
- With NPM:
- ```bash
- $ npm install vue-recaptcha-v3
- ```
+## Install
+With NPM:
+```bash
+$ npm install vue-recaptcha-v3
+```
+
+With Yarn:
+```bash
+$ yarn add vue-recaptcha-v3
+```
  
- With Yarn:
- ```bash
- $ yarn add vue-recaptcha-v3
- ```
- 
- ## Prerequisites
- To use this package you only need a valid site key for your domain, which you can easily get [here](https://www.google.com/recaptcha).
+## Prerequisites
+To use this package you only need a valid site key for your domain, which you can easily get [here](https://www.google.com/recaptcha).
 
 ## Usage
 
