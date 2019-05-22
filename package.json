@@ -35,7 +35,7 @@
     "@auritylab/tslint-config-base": "^1.0.1",
     "html-webpack-plugin": "^3.2.0",
     "ts-loader": "^5.4.5",
-    "tslint": "^5.11.0",
+    "tslint": "^5.16.0",
     "typescript": "^3.4.5",
     "vue": "^2.5.17",
     "webpack": "^4.25.1",
