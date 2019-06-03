@@ -37,12 +37,12 @@
     "ts-loader": "^6.0.2",
     "tslint": "^5.17.0",
     "typescript": "^3.5.1",
-    "vue": "^2.5.17",
+    "vue": "^2.6.10",
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.5.1"
   },
   "peerDependencies": {
-    "vue": "^2.5.17"
+    "vue": "^2.6.10"
   }
 }
