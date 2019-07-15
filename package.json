@@ -39,7 +39,7 @@
     "typescript": "^3.5.2",
     "vue": "^2.6.10",
     "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5",
+    "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2"
   },
   "peerDependencies": {
