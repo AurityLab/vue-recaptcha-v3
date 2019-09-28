@@ -23,11 +23,11 @@ export function VueReCaptcha (Vue: typeof _Vue, options: IReCaptchaOptions): voi
       return wrapper.execute(action)
     }
     loadedWaiters.forEach((v) => v(true))
-  })
+  }).catch(console.error)
 }
 
 class ReCaptchaVuePlugin {
-  public initializeReCaptcha (options: IReCaptchaOptions): Promise<ReCaptchaInstance> {
+  public async initializeReCaptcha (options: IReCaptchaOptions): Promise<ReCaptchaInstance> {
     return loadReCaptcha(options.siteKey, options.loaderOptions)
   }
 }
