@@ -29,6 +29,13 @@
     "demo:webpack:server": "webpack-dev-server --config demo/webpack.config.js --progress --public --host 0.0.0.0"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "2",
+    "eslint": "6",
+    "eslint-config-standard-with-typescript": "^9.0.0",
+    "eslint-plugin-import": "2",
+    "eslint-plugin-node": "9",
+    "eslint-plugin-promise": "4",
+    "eslint-plugin-standard": "4",
     "recaptcha-v3": "^1.6.1"
   },
   "devDependencies": {
