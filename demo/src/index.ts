@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import {VueReCaptcha} from '../../src/ReCaptchaVuePlugin'
+import { VueReCaptcha } from '../../src/ReCaptchaVuePlugin'
 
-Vue.use(VueReCaptcha, {siteKey: '6LfC6HgUAAAAAEtG92bYRzwYkczElxq7WkCoG4Ob'})
+Vue.use(VueReCaptcha, { siteKey: '6LfC6HgUAAAAAEtG92bYRzwYkczElxq7WkCoG4Ob' })
 
 new Vue({
   methods: {
-    recaptcha() {
+    recaptcha () {
       console.log('recaptcha clicked')
       this.$recaptchaLoaded().then(() => {
         console.log('recaptcha loaded')

@@ -1,6 +1,6 @@
-import {IReCaptchaLoaderOptions} from 'recaptcha-v3/dist/ReCaptchaLoader'
+import { IReCaptchaLoaderOptions } from 'recaptcha-v3/dist/ReCaptchaLoader'
 
 export interface IReCaptchaOptions {
-  siteKey: string,
+  siteKey: string
   loaderOptions: IReCaptchaLoaderOptions
 }
