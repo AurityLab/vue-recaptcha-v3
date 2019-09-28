@@ -3323,10 +3323,10 @@ readdirp@^2.2.1:
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
 
-recaptcha-v3@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/recaptcha-v3/-/recaptcha-v3-1.5.0.tgz#299ed2f72be07570e6a91342b41d58e2a005db17"
-  integrity sha512-iZgVoxQU56yqrrlLu/dlcwmvCMq0gHo1VLqVCzCIOeDfj/1zOqDkeI7G8HuDI6S2ptpVlLBMeBYX64/Z5OgvEA==
+recaptcha-v3@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/recaptcha-v3/-/recaptcha-v3-1.6.1.tgz#7369e634e42b3f6024d67f36390ad80dc3b81254"
+  integrity sha512-Vm8zcmUZbJmWprwgTO/oeIAkN/JTUxpwd2guak5J1gj0yoUH/Ncxuqsb9oek9LYKRq/fHmwkGQhZJN/T/HMZDA==
 
 regex-not@^1.0.0, regex-not@^1.0.2:
   version "1.0.2"
