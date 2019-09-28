@@ -1,0 +1,20 @@
+name: Lint
+
+on:
+- push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Use Node.js 10.16.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.16.x
+    - name: Install dependencies
+      run: |
+        yarn install
+    - name: Lint
+      run: |
+        yarn lint
