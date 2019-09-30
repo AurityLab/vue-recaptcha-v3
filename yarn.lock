@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@auritylab/tslint-config-base@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@auritylab/tslint-config-base/-/tslint-config-base-1.0.1.tgz#52bc7f7441aafb99e10c3d3fa2b2e08f224f6d6c"
-  integrity sha512-w1GbiGO4uRA3cFmF38DpWSiltgoRfkFMNasKqUl8OP8fg3lPPFhVi4H+lZfzl8M3GZ95jYzn1eNEsl7/PQE5Zg==
-
 "@babel/code-frame@^7.0.0":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.5.5.tgz#bc0782f6d69f7b7d49531219699b988f669a8f9d"
@@ -3883,9 +3878,9 @@ readdirp@^2.2.1:
     readable-stream "^2.0.2"
 
 recaptcha-v3@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/recaptcha-v3/-/recaptcha-v3-1.6.1.tgz#7369e634e42b3f6024d67f36390ad80dc3b81254"
-  integrity sha512-Vm8zcmUZbJmWprwgTO/oeIAkN/JTUxpwd2guak5J1gj0yoUH/Ncxuqsb9oek9LYKRq/fHmwkGQhZJN/T/HMZDA==
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/recaptcha-v3/-/recaptcha-v3-1.7.0.tgz#64aefd1e161a8337c2266a0d4e4558d745592867"
+  integrity sha512-XnwNjLdw2nNOFUgFEM2thpvJzJdmJV4kmqZQXVH28G1+KhAzgrZnzrd5V0UnDuRsrXkrQUdP4aywqkDMEIE1Yw==
 
 regex-not@^1.0.0, regex-not@^1.0.2:
   version "1.0.2"
