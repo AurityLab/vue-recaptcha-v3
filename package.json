@@ -34,7 +34,7 @@
     "eslint": "6",
     "eslint-config-standard-with-typescript": "^9.0.0",
     "eslint-plugin-import": "2",
-    "eslint-plugin-node": "9",
+    "eslint-plugin-node": "10",
     "eslint-plugin-promise": "4",
     "eslint-plugin-standard": "4",
     "recaptcha-v3": "^1.6.1"
