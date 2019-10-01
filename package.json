@@ -37,7 +37,7 @@
     "eslint-plugin-node": "10",
     "eslint-plugin-promise": "4",
     "eslint-plugin-standard": "4",
-    "recaptcha-v3": "^1.6.1"
+    "recaptcha-v3": "^1.7.0"
   },
   "devDependencies": {
     "@auritylab/tslint-config-base": "^1.0.1",
