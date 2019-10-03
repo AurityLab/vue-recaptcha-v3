@@ -1433,10 +1433,10 @@ escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-eslint-config-standard-with-typescript@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-standard-with-typescript/-/eslint-config-standard-with-typescript-9.0.0.tgz#961bbd4d43e4f7e772cb6d8bf728bf88c6bbbff3"
-  integrity sha512-e9ReAJbpYY8p0jndi6+x4K2PWkOU4xFqEJ6XRmLLoq7SxaqC9n5vlxqfadAznoMoffkjW8cN7HlyQLj15ITpvQ==
+eslint-config-standard-with-typescript@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard-with-typescript/-/eslint-config-standard-with-typescript-10.0.0.tgz#f96a5aa9ef9dfd76aafdc07c44754fc4067210ed"
+  integrity sha512-t21JVyToxvoOFgcg69K6HM38SwWM3QADiOHyz7q+4Qz+Iir3nvRCstGpPzRCKnlXBHinP4AM0QtytkE1J6otig==
   dependencies:
     "@typescript-eslint/parser" "^2.0.0"
     eslint-config-standard "^14.0.0"
