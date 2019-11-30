@@ -3877,10 +3877,10 @@ readdirp@^2.2.1:
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
 
-recaptcha-v3@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/recaptcha-v3/-/recaptcha-v3-1.7.0.tgz#64aefd1e161a8337c2266a0d4e4558d745592867"
-  integrity sha512-XnwNjLdw2nNOFUgFEM2thpvJzJdmJV4kmqZQXVH28G1+KhAzgrZnzrd5V0UnDuRsrXkrQUdP4aywqkDMEIE1Yw==
+recaptcha-v3@^1.7.2:
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/recaptcha-v3/-/recaptcha-v3-1.7.2.tgz#7de77a9e2f2023a8bbffd464773de02fcdc87ea7"
+  integrity sha512-cT5mlRGHg+SX3ARVv792XcjJFJEaoHqC3A/89927sojngKntxZhk7aabwTSIOLXqwF9oO0w5Jl+HOFAh6hKwfQ==
 
 regex-not@^1.0.0, regex-not@^1.0.2:
   version "1.0.2"
