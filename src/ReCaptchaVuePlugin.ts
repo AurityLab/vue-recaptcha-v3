@@ -22,6 +22,8 @@ export function VueReCaptcha (Vue: typeof _Vue, options: IReCaptchaOptions): voi
     Vue.prototype.$recaptcha = async (action: string): Promise<string> => {
       return wrapper.execute(action)
     }
+
+    Vue.prototype.$recaptchaInstance = wrapper
     loadedWaiters.forEach((v) => v(true))
   }).catch(console.error)
 }
@@ -36,5 +38,6 @@ declare module 'vue/types/vue' {
   interface Vue {
     $recaptcha(action: string): Promise<string>
     $recaptchaLoaded(): Promise<boolean>
+    $recaptchaInstance: ReCaptchaInstance
   }
 }
