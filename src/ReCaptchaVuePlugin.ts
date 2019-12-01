@@ -5,16 +5,19 @@ import { IReCaptchaOptions } from './IReCaptchaOptions'
 export function VueReCaptcha (Vue: typeof _Vue, options: IReCaptchaOptions): void {
   const plugin = new ReCaptchaVuePlugin()
   let recaptchaLoaded = false
+  let recaptchaError: Error = null
 
-  const loadedWaiters: Array<(resolve: boolean) => void> = []
+  const loadedWaiters: Array<({resolve: (resolve: boolean) => void, reject: (reject: Error) => void})> = []
 
   // eslint-disable-next-line @typescript-eslint/promise-function-async
   Vue.prototype.$recaptchaLoaded = () => new Promise<boolean>((resolve, reject) => {
-    if (recaptchaLoaded === true) {
-      resolve(true)
-    } else {
-      loadedWaiters.push(resolve)
+    if (recaptchaError !== null) {
+      return reject(recaptchaError)
     }
+    if (recaptchaLoaded === true) {
+      return resolve(true)
+    }
+    loadedWaiters.push({ resolve, reject })
   })
 
   plugin.initializeReCaptcha(options).then((wrapper) => {
@@ -24,8 +27,11 @@ export function VueReCaptcha (Vue: typeof _Vue, options: IReCaptchaOptions): voi
     }
 
     Vue.prototype.$recaptchaInstance = wrapper
-    loadedWaiters.forEach((v) => v(true))
-  }).catch(console.error)
+    loadedWaiters.forEach((v) => v.resolve(true))
+  }).catch((error) => {
+    recaptchaError = error
+    loadedWaiters.forEach((v) => v.reject(error))
+  })
 }
 
 class ReCaptchaVuePlugin {
