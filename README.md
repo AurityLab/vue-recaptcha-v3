@@ -39,6 +39,27 @@ new Vue({
 })
 ```
 
+#### Wait for reCAPTCHA to load
+
+```javascript
+async mounted () {
+  await this.$recaptchaLoaded() // Waits for reCAPTCHA to load
+  const token = await this.$recaptcha('connect') // Retreives token
+  this.doSomething(token) // Use token
+}
+```
+
+#### Access [reCAPTCHA-v3](https://github.com/AurityLab/recaptcha-v3) Instance
+
+```javascript
+methods: {
+  hideBadge () {
+    // returns recaptcha-v3 instance and calls hideBadge()
+    this.$recaptchaInstance().hideBadge()
+  }
+}
+```
+
 ## Options
 This plugin offers optional options to configure the behavior of some parts.
 
