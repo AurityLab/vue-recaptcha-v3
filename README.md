@@ -35,6 +35,8 @@ new Vue({
 
       // Execute reCAPTCHA with action "login".
       const token = await this.$recaptcha('login')
+
+      // Do stuff with the received token.
     }
   },
   template: '<button @click="recaptcha">Execute recaptcha</button>'
@@ -64,3 +66,18 @@ Vue.use(VueReCaptcha, {
   }
 })
 ```
+
+## Advanced usage
+Some topics which are not commonly used, but required in some cases.
+
+### Access [reCAPTCHA-v3](https://github.com/AurityLab/recaptcha-v3/#load-options-usage) instance
+In some cases it's necessary to interact with the reCAPTCHA-v3 instance, which provides more control over reCAPTCHA. 
+```javascript
+const recaptcha = this.$recaptchaInstance
+
+// Hide reCAPTCHA badge:
+recaptcha.hideBadge()
+
+// Show reCAPTCHA badge:
+recaptcha.showBadge()
+```  
