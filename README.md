@@ -29,10 +29,12 @@ Vue.use(VueReCaptcha, { siteKey: '<site key>' })
 
 new Vue({
   methods: {
-    recaptcha() {
-      this.$recaptcha('login').then((token) => {
-        console.log(token) // Will print the token
-      })
+    async recaptcha() {
+      // (optional) Wait until recaptcha has been loaded.
+      await this.$recaptchaLoaded()
+
+      // Execute reCAPTCHA with action "login".
+      const token = await this.$recaptcha('login')
     }
   },
   template: '<button @click="recaptcha">Execute recaptcha</button>'
