@@ -49,7 +49,7 @@ Available options:
 |Name|Description|Type|Default value
 |----|-----------|----|-------------
 |siteKey|The site key for your domain from Google.|*string*|*none*
-|loaderOptions|Optional options for the [recaptcha-v3](https://github.com/AurityLab/recaptcha-v3) loader. The available options are described [here](https://github.com/AurityLab/recaptcha-v3/#usage-1).|*object*|`null`
+|loaderOptions|Optional options for the [recaptcha-v3](https://github.com/AurityLab/recaptcha-v3) loader. The available options are described [here](https://github.com/AurityLab/recaptcha-v3/#load-options-usage).|*object*|`null`
 
 ### Usage
 To use the options just pass an object to the `Vue.use(...)` method. For example:
