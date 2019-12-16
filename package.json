@@ -43,12 +43,12 @@
     "html-webpack-plugin": "^3.2.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.3",
-    "vue": "^2.6.10",
+    "vue": "^2.6.11",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   },
   "peerDependencies": {
-    "vue": "^2.6.10"
+    "vue": "^2.6.11"
   }
 }
