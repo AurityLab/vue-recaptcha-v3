@@ -4016,10 +4016,10 @@ readdirp@^2.2.1:
     micromatch "^3.1.10"
     readable-stream "^2.0.2"
 
-recaptcha-v3@^1.7.2:
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/recaptcha-v3/-/recaptcha-v3-1.7.2.tgz#7de77a9e2f2023a8bbffd464773de02fcdc87ea7"
-  integrity sha512-cT5mlRGHg+SX3ARVv792XcjJFJEaoHqC3A/89927sojngKntxZhk7aabwTSIOLXqwF9oO0w5Jl+HOFAh6hKwfQ==
+recaptcha-v3@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/recaptcha-v3/-/recaptcha-v3-1.8.0.tgz#b39ae7cba5322ed7027359c3f14502e44e909f83"
+  integrity sha512-ugtg4JHDZiYJwv3ZjWBBZntsTCVpRk2BD8AhVVpSw9jv71SSx+SS9H342VaE0D2XV78DpRdDuiMO9ZIgl4zI3A==
 
 regex-not@^1.0.0, regex-not@^1.0.2:
   version "1.0.2"
