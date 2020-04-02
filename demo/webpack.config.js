@@ -3,8 +3,11 @@ const webpack = require('webpack')
 const WebpackHtmlPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/index.ts'),
-
+  watch: true,
+  entry: {
+    index: path.resolve(__dirname, './src/index.ts'),
+    delaydemo: path.resolve(__dirname, './src/delaydemo.ts')
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/'
@@ -24,13 +27,13 @@ module.exports = {
   resolve: {
     extensions: [
       '.js',
-      '.ts',
+      '.ts'
     ],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      vue$: 'vue/dist/vue.esm.js'
     }
   },
-  mode: "development",
+  mode: 'development',
   devServer: {
     compress: true,
     disableHostCheck: true,
@@ -39,7 +42,7 @@ module.exports = {
   plugins: [
     new WebpackHtmlPlugin({
       template: path.resolve(__dirname, './src/index.html'),
-      inject: true,
+      inject: true
     })
-  ],
-};
+  ]
+}
