@@ -40,7 +40,7 @@
     "eslint-plugin-node": "11",
     "eslint-plugin-promise": "4",
     "eslint-plugin-standard": "4",
-    "html-webpack-plugin": "^4.0.4",
+    "html-webpack-plugin": "^4.3.0",
     "ts-loader": "^6.2.2",
     "typescript": "^3.9.7",
     "vue": "^2.6.11",
