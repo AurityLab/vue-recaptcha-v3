@@ -20,18 +20,37 @@ export function VueReCaptcha (Vue: typeof _Vue, options: IReCaptchaOptions): voi
     loadedWaiters.push({ resolve, reject })
   })
 
-  plugin.initializeReCaptcha(options).then((wrapper) => {
+  const thenAction: any = (wrapper: ReCaptchaInstance) => {
     recaptchaLoaded = true
     Vue.prototype.$recaptcha = async (action: string): Promise<string> => {
       return await wrapper.execute(action)
     }
-
     Vue.prototype.$recaptchaInstance = wrapper
     loadedWaiters.forEach((v) => v.resolve(true))
-  }).catch((error) => {
+  }
+
+  const catchAction: any = (error: any) => {
     recaptchaError = error
     loadedWaiters.forEach((v) => v.reject(error))
-  })
+  }
+  if (options.siteKey != null) {
+    plugin.initializeReCaptcha(options).then((wrapper) => {
+      thenAction(wrapper)
+    }).catch((error) => {
+      catchAction(error)
+    })
+  } else {
+    Vue.prototype.$captchaOptions = options
+    Vue.prototype.$loadRecaptchaAfterSetup = async (siteKey: string): Promise<any> => {
+      const options = Vue.prototype.$captchaOptions
+      options.siteKey = siteKey
+      await plugin.initializeReCaptcha(options).then((wrapper) => {
+        thenAction(wrapper)
+      }).catch((error) => {
+        catchAction(error)
+      })
+    }
+  }
 }
 
 class ReCaptchaVuePlugin {
@@ -45,5 +64,6 @@ declare module 'vue/types/vue' {
     $recaptcha: (action: string) => Promise<string>
     $recaptchaLoaded: () => Promise<boolean>
     $recaptchaInstance: ReCaptchaInstance
+    $loadRecaptchaAfterSetup(siteKey: string): Promise<any>
   }
 }
