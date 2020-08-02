@@ -16,13 +16,13 @@ export const VueReCaptcha = {
     const isLoaded = ref(false)
     const instance: Ref<ReCaptchaInstance | undefined> = ref(undefined)
 
-    app.config.globalProperties.$recaptchaLoaded = recaptchaLoaded
+    app.config.globalProperties.$recaptchaLoaded = recaptchaLoaded(isLoaded)
 
     initializeReCaptcha(options).then((wrapper) => {
       instance.value = wrapper
       isLoaded.value = true
 
-      app.config.globalProperties.$recaptcha = recaptcha
+      app.config.globalProperties.$recaptcha = recaptcha(instance)
       app.config.globalProperties.$recaptchaInstance = instance
 
       globalConfig.loadedWaiters.forEach((v) => v.resolve(true))
