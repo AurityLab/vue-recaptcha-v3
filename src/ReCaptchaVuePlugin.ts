@@ -6,11 +6,11 @@ const VueReCaptchaInjectKey: InjectionKey<IReCaptchaComposition> = Symbol('VueRe
 
 interface IGlobalConfig {
   loadedWaiters: Array<({resolve: (resolve: boolean) => void, reject: (reject: Error) => void})>
-  error: Error | undefined
+  error: Error | null
 }
 const globalConfig: IGlobalConfig = {
   loadedWaiters: [],
-  error: undefined
+  error: null
 }
 
 export const VueReCaptcha = {
