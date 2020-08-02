@@ -1,49 +1,75 @@
 import { load as loadReCaptcha, ReCaptchaInstance } from 'recaptcha-v3'
-import _Vue from 'vue'
+import { App, Ref, ref, provide, inject, InjectionKey } from 'vue'
 import { IReCaptchaOptions } from './IReCaptchaOptions'
 
-export function VueReCaptcha (Vue: typeof _Vue, options: IReCaptchaOptions): void {
-  const plugin = new ReCaptchaVuePlugin()
-  let recaptchaLoaded = false
-  let recaptchaError: Error = null
+const VueReCaptchaInjectKey: InjectionKey<IReCaptchaComposition> = Symbol('VueReCaptchaInjectKey')
 
-  const loadedWaiters: Array<({resolve: (resolve: boolean) => void, reject: (reject: Error) => void})> = []
+const globalConfig = {
+  options: undefined as IReCaptchaOptions,
+  loadedWaiters: [] as Array<({resolve: (resolve: boolean) => void, reject: (reject: Error) => void})>,
+  error: undefined as Error | undefined
+}
 
+export const VueReCaptcha = {
+  install (app: App, options: IReCaptchaOptions) {
+    globalConfig.options = options
+    const isLoaded = ref(false)
+    const instance: Ref<ReCaptchaInstance | undefined> = ref(undefined)
+
+    app.config.globalProperties.$recaptchaLoaded = recaptchaLoaded
+
+    initializeReCaptcha(options).then((wrapper) => {
+      instance.value = wrapper
+      isLoaded.value = true
+
+      app.config.globalProperties.$recaptcha = recaptcha
+      app.config.globalProperties.$recaptchaInstance = instance
+
+      globalConfig.loadedWaiters.forEach((v) => v.resolve(true))
+    }).catch((error) => {
+      globalConfig.error = error
+      globalConfig.loadedWaiters.forEach((v) => v.reject(error))
+    })
+
+    provide(VueReCaptchaInjectKey, {
+      instance,
+      isLoaded,
+      executeRecaptcha: recaptcha(instance),
+      recaptchaLoaded: recaptchaLoaded(isLoaded)
+    })
+  }
+}
+
+export function useReCaptcha (): IReCaptchaComposition {
+  return inject(VueReCaptchaInjectKey)
+}
+
+async function initializeReCaptcha (options: IReCaptchaOptions): Promise<ReCaptchaInstance> {
+  return await loadReCaptcha(options.siteKey, options.loaderOptions)
+}
+
+function recaptchaLoaded (isLoaded: Ref<boolean>) {
   // eslint-disable-next-line @typescript-eslint/promise-function-async
-  Vue.prototype.$recaptchaLoaded = () => new Promise<boolean>((resolve, reject) => {
-    if (recaptchaError !== null) {
-      return reject(recaptchaError)
+  return () => new Promise<boolean>((resolve, reject) => {
+    if (globalConfig.error !== null) {
+      return reject(globalConfig.error)
     }
-    if (recaptchaLoaded) {
+    if (isLoaded.value) {
       return resolve(true)
     }
-    loadedWaiters.push({ resolve, reject })
-  })
-
-  plugin.initializeReCaptcha(options).then((wrapper) => {
-    Vue.prototype.$recaptcha = async (action: string): Promise<string> => {
-      return await wrapper.execute(action)
-    }
-
-    Vue.prototype.$recaptchaInstance = wrapper
-    recaptchaLoaded = true
-    loadedWaiters.forEach((v) => v.resolve(true))
-  }).catch((error) => {
-    recaptchaError = error
-    loadedWaiters.forEach((v) => v.reject(error))
+    globalConfig.loadedWaiters.push({ resolve, reject })
   })
 }
 
-class ReCaptchaVuePlugin {
-  public async initializeReCaptcha (options: IReCaptchaOptions): Promise<ReCaptchaInstance> {
-    return await loadReCaptcha(options.siteKey, options.loaderOptions)
+function recaptcha (instance: Ref<ReCaptchaInstance | undefined>) {
+  return async (action: string): Promise<string> => {
+    return await instance.value?.execute(action)
   }
 }
 
-declare module 'vue/types/vue' {
-  interface Vue {
-    $recaptcha: (action: string) => Promise<string>
-    $recaptchaLoaded: () => Promise<boolean>
-    $recaptchaInstance: ReCaptchaInstance
-  }
+export interface IReCaptchaComposition {
+  isLoaded: Ref<boolean>
+  instance: Ref<ReCaptchaInstance | undefined>
+  executeRecaptcha: (action: string) => Promise<string>
+  recaptchaLoaded: () => Promise<boolean>
 }
