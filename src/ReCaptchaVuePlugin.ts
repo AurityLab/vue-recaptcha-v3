@@ -4,9 +4,13 @@ import { IReCaptchaOptions } from './IReCaptchaOptions'
 
 const VueReCaptchaInjectKey: InjectionKey<IReCaptchaComposition> = Symbol('VueReCaptchaInjectKey')
 
-const globalConfig = {
-  loadedWaiters: [] as Array<({resolve: (resolve: boolean) => void, reject: (reject: Error) => void})>,
-  error: undefined as Error | undefined
+interface IGlobalConfig {
+  loadedWaiters: Array<({resolve: (resolve: boolean) => void, reject: (reject: Error) => void})>
+  error: Error | undefined
+}
+const globalConfig: IGlobalConfig = {
+  loadedWaiters: [],
+  error: undefined
 }
 
 export const VueReCaptcha = {
