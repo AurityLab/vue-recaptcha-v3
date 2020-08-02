@@ -5,14 +5,12 @@ import { IReCaptchaOptions } from './IReCaptchaOptions'
 const VueReCaptchaInjectKey: InjectionKey<IReCaptchaComposition> = Symbol('VueReCaptchaInjectKey')
 
 const globalConfig = {
-  options: undefined as IReCaptchaOptions,
   loadedWaiters: [] as Array<({resolve: (resolve: boolean) => void, reject: (reject: Error) => void})>,
   error: undefined as Error | undefined
 }
 
 export const VueReCaptcha = {
   install (app: App, options: IReCaptchaOptions) {
-    globalConfig.options = options
     const isLoaded = ref(false)
     const instance: Ref<ReCaptchaInstance | undefined> = ref(undefined)
 
