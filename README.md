@@ -75,7 +75,7 @@ createApp(component)
 ```
 
 ### TypeScript + Vue 3
-To get type suggestions for instance variables (this is not needed for composition API), create a new file called `vue-recaptcha-shims.d.ts` and put the following inside it:
+To get type suggestions for instance variables (this is not needed for composition API), create a new file called `shims-vue-recaptcha-v3.d.ts` and put the following inside it:
 ```ts
 import { ReCaptchaInstance } from 'recaptcha-v3'
 
