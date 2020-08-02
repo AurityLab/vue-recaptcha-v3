@@ -14,8 +14,8 @@ const compoent = {
     }
   },
   template: '<button @click="recaptcha">Execute recaptcha</button>'
-};
+}
 
 createApp(compoent)
   .use(VueReCaptcha, { siteKey: '6LfC6HgUAAAAAEtG92bYRzwYkczElxq7WkCoG4Ob' })
-  .mount('#inject');
+  .mount('#inject')
