@@ -33,7 +33,7 @@ export const VueReCaptcha = {
       globalConfig.loadedWaiters.forEach((v) => v.reject(error))
     })
 
-    provide(VueReCaptchaInjectKey, {
+    app.provide(VueReCaptchaInjectKey, {
       instance,
       isLoaded,
       executeRecaptcha: recaptcha(instance),
