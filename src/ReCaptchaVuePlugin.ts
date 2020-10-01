@@ -21,12 +21,12 @@ export function VueReCaptcha (Vue: typeof _Vue, options: IReCaptchaOptions): voi
   })
 
   plugin.initializeReCaptcha(options).then((wrapper) => {
-    recaptchaLoaded = true
     Vue.prototype.$recaptcha = async (action: string): Promise<string> => {
       return await wrapper.execute(action)
     }
 
     Vue.prototype.$recaptchaInstance = wrapper
+    recaptchaLoaded = true
     loadedWaiters.forEach((v) => v.resolve(true))
   }).catch((error) => {
     recaptchaError = error
