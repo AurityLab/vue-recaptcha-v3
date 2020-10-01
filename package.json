@@ -41,7 +41,7 @@
     "eslint-plugin-promise": "4",
     "eslint-plugin-standard": "4",
     "html-webpack-plugin": "^4.5.0",
-    "ts-loader": "^8.0.1",
+    "ts-loader": "^8.0.4",
     "typescript": "^3.9.7",
     "vue": "^2.6.11",
     "webpack": "^4.43.0",
