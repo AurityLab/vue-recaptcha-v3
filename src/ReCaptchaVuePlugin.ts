@@ -21,8 +21,8 @@ export const VueReCaptcha = {
     app.config.globalProperties.$recaptchaLoaded = recaptchaLoaded(isLoaded)
 
     initializeReCaptcha(options).then((wrapper) => {
-      instance.value = wrapper
       isLoaded.value = true
+      instance.value = wrapper
 
       app.config.globalProperties.$recaptcha = recaptcha(instance)
       app.config.globalProperties.$recaptchaInstance = instance
