@@ -4,6 +4,8 @@
 
 A simple and easy to use reCAPTCHA (v3 only) library for Vue based on [reCAPTCHA-v3](https://github.com/AurityLab/recaptcha-v3).
 
+**The latest version of this package supports Vue 3!** [See here for Vue 2 usage](https://github.com/AurityLab/vue-recaptcha-v3/tree/vue-v2.x). 
+
 ## Install
 With NPM:
 ```bash
