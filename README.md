@@ -7,12 +7,12 @@ A simple and easy to use reCAPTCHA (v3 only) library for Vue based on [reCAPTCHA
 ## Install
 With NPM:
 ```bash
-$ npm install vue-recaptcha-v3
+$ npm install vue-recaptcha-v3@^1.9.0
 ```
 
 With Yarn:
 ```bash
-$ yarn add vue-recaptcha-v3
+$ yarn add vue-recaptcha-v3@^1.9.0
 ```
  
 ## Prerequisites
