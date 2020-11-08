@@ -43,6 +43,51 @@ new Vue({
 })
 ```
 
+### Vue 3 Composition
+
+```js
+import { createApp } from 'vue'
+import { VueReCaptcha, useRecaptcha } from 'vue-recaptcha-v3'
+
+const component = {
+  setup() {
+    const { executeRecaptcha, recaptchaLoaded } = useRecaptcha()
+
+    const recaptcha = async () => {
+      // (optional) Wait until recaptcha has been loaded.
+      await recaptchaLoaded()
+
+      // Execute reCAPTCHA with action "login".
+      const token = await executeRecaptcha('login')
+
+      // Do stuff with the received token.
+    }
+
+    return {
+      recaptcha
+    }
+  },
+  template: '<button @click="recaptcha">Execute recaptcha</button>'
+}
+
+createApp(component)
+  .use(VueReCaptcha, { siteKey: '<site key>' })
+```
+
+### TypeScript + Vue 3
+To get type suggestions for instance variables (this is not needed for composition API), create a new file called `shims-vue-recaptcha-v3.d.ts` and put the following inside it:
+```ts
+import { ReCaptchaInstance } from 'recaptcha-v3'
+
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $recaptcha: (action: string) => Promise<string>
+    $recaptchaLoaded: () => Promise<boolean>
+    $recaptchaInstance: ReCaptchaInstance
+  }
+}
+```
+
 ## Options
 This plugin offers optional options to configure the behavior of some parts.
 
@@ -80,4 +125,4 @@ recaptcha.hideBadge()
 
 // Show reCAPTCHA badge:
 recaptcha.showBadge()
-```  
+```

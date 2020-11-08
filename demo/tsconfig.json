@@ -8,7 +8,7 @@
     "declaration": true,
     "removeComments": true,
     "lib": [
-      "es6",
+      "esnext",
       "dom"
     ],
     "strictNullChecks": true
