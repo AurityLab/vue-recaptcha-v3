@@ -5,7 +5,7 @@ import { IReCaptchaOptions } from './IReCaptchaOptions'
 export function VueReCaptcha (Vue: typeof _Vue, options: IReCaptchaOptions): void {
   const plugin = new ReCaptchaVuePlugin()
   let recaptchaLoaded = false
-  let recaptchaError: Error = null
+  let recaptchaError: Error | null = null
 
   const loadedWaiters: Array<({resolve: (resolve: boolean) => void, reject: (reject: Error) => void})> = []
 
