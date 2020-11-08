@@ -27,7 +27,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint \"src/**/*.ts\" \"demo/**/*.ts\"",
-    "demo:webpack:server": "webpack-dev-server --config demo/webpack.config.js --progress --public --host 0.0.0.0"
+    "demo:webpack:server": "webpack serve --config demo/webpack.config.js --progress"
   },
   "dependencies": {
     "recaptcha-v3": "^1.8.0"
