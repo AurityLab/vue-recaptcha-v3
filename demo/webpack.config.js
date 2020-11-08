@@ -27,7 +27,7 @@ module.exports = {
       '.ts',
     ],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm-bundler.js'
     }
   },
   mode: "development",
