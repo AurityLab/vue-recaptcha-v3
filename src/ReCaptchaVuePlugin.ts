@@ -1,5 +1,5 @@
 import { load as loadReCaptcha, ReCaptchaInstance } from 'recaptcha-v3'
-import { App, Ref, ref, provide, inject, InjectionKey } from 'vue'
+import { App, Ref, ref, inject, InjectionKey } from 'vue'
 import { IReCaptchaOptions } from './IReCaptchaOptions'
 
 const VueReCaptchaInjectKey: InjectionKey<IReCaptchaComposition> = Symbol('VueReCaptchaInjectKey')
@@ -42,7 +42,7 @@ export const VueReCaptcha = {
   }
 }
 
-export function useReCaptcha (): IReCaptchaComposition {
+export function useReCaptcha (): IReCaptchaComposition | undefined {
   return inject(VueReCaptchaInjectKey)
 }
 
@@ -64,7 +64,7 @@ function recaptchaLoaded (isLoaded: Ref<boolean>) {
 }
 
 function recaptcha (instance: Ref<ReCaptchaInstance | undefined>) {
-  return async (action: string): Promise<string> => {
+  return async (action: string): Promise<string | undefined> => {
     return await instance.value?.execute(action)
   }
 }

@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import { VueReCaptcha } from '../../src/ReCaptchaVuePlugin'
 
-const compoent = {
+const component = {
   methods: {
     recaptcha () {
       console.log('recaptcha clicked')
@@ -16,6 +16,6 @@ const compoent = {
   template: '<button @click="recaptcha">Execute recaptcha</button>'
 }
 
-createApp(compoent)
+createApp(component)
   .use(VueReCaptcha, { siteKey: '6LfC6HgUAAAAAEtG92bYRzwYkczElxq7WkCoG4Ob' })
   .mount('#inject')
