@@ -49,11 +49,11 @@ new Vue({
 
 ```js
 import { createApp } from 'vue'
-import { VueReCaptcha, useRecaptcha } from 'vue-recaptcha-v3'
+import { VueReCaptcha, useReCaptcha } from 'vue-recaptcha-v3'
 
 const component = {
   setup() {
-    const { executeRecaptcha, recaptchaLoaded } = useRecaptcha()
+    const { executeRecaptcha, recaptchaLoaded } = useReCaptcha()
 
     const recaptcha = async () => {
       // (optional) Wait until recaptcha has been loaded.
