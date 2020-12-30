@@ -46,7 +46,7 @@
     "vue": "^3.0.4",
     "webpack": "^5.11.1",
     "webpack-cli": "^4.3.0",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.1"
   },
   "peerDependencies": {
     "vue": "^3.0.4"
