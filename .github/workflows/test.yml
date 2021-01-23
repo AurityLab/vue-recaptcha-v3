@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Use Node.js 10.16.x
+    - name: Use Node.js 10.17.x
       uses: actions/setup-node@v1
       with:
-        node-version: 10.16.x
+        node-version: 10.17.x
     - name: Install dependencies
       run: |
         yarn install
