@@ -1,0 +1,32 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: webpack
+    versions:
+    - 5.19.0
+    - 5.20.0
+    - 5.20.1
+    - 5.22.0
+    - 5.26.2
+    - 5.27.2
+    - 5.34.0
+    - 5.35.1
+    - 5.36.0
+  - dependency-name: ts-loader
+    versions:
+    - 8.0.16
+    - 9.0.0
+    - 9.0.2
+    - 9.1.0
+  - dependency-name: eslint
+    versions:
+    - 7.22.0
+  - dependency-name: typescript
+    versions:
+    - 4.1.4
