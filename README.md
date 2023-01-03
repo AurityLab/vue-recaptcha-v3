@@ -119,6 +119,8 @@ Some topics which are not commonly used, but required in some cases.
 
 ### Access [reCAPTCHA-v3](https://github.com/AurityLab/recaptcha-v3/#load-options-usage) instance
 In some cases it's necessary to interact with the reCAPTCHA-v3 instance, which provides more control over reCAPTCHA. 
+
+#### Options API
 ```javascript
 const recaptcha = this.$recaptchaInstance
 
@@ -127,4 +129,15 @@ recaptcha.hideBadge()
 
 // Show reCAPTCHA badge:
 recaptcha.showBadge()
+```
+
+#### Composition API
+```javascript
+const { instance } useReCaptcha();
+
+// Hide reCAPTCHA badge:
+instance.value.hideBadge()
+
+// Show reCAPTCHA badge:
+instance.value.showBadge()
 ```
