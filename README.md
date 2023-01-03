@@ -133,7 +133,7 @@ recaptcha.showBadge()
 
 #### Composition API
 ```javascript
-const { instance } useReCaptcha();
+const { instance } = useReCaptcha();
 
 // Hide reCAPTCHA badge:
 instance.value.hideBadge()
