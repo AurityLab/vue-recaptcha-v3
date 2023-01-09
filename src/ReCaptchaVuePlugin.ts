@@ -36,7 +36,7 @@ export const VueReCaptcha = {
     }
 
     /**
-     * Credit goes to https://github.com/fatfingers23 and his push request https://github.com/AurityLab/vue-recaptcha-v3/pull/161
+     * Credit goes to https://github.com/fatfingers23 and his pull request https://github.com/AurityLab/vue-recaptcha-v3/pull/161
      */
     if (options?.siteKey != null) {
       initializeReCaptcha(options).then((wrapper) => {
