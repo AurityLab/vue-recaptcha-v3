@@ -15,7 +15,7 @@
   },
   "include": [
     "src/**/*"
-  ],
+, "demo/src/delaydemo.ts", "demo/src/delaydemo.ts"  ],
   "exclude": [
     "node_modules",
     "demo/*"

@@ -20,7 +20,7 @@ export const VueReCaptcha = {
 
     app.config.globalProperties.$recaptchaLoaded = recaptchaLoaded(isLoaded)
 
-    initializeReCaptcha(options).then((wrapper) => {
+    const thenAction: any = (wrapper: ReCaptchaInstance) => {
       isLoaded.value = true
       instance.value = wrapper
 
@@ -28,10 +28,37 @@ export const VueReCaptcha = {
       app.config.globalProperties.$recaptchaInstance = instance
 
       globalConfig.loadedWaiters.forEach((v) => v.resolve(true))
-    }).catch((error) => {
+    }
+
+    const catchAction: any = (error: any) => {
       globalConfig.error = error
       globalConfig.loadedWaiters.forEach((v) => v.reject(error))
-    })
+    }
+
+    /**
+     * Credit goes to https://github.com/fatfingers23 and his push request https://github.com/AurityLab/vue-recaptcha-v3/pull/161
+     */
+    if (options?.siteKey != null) {
+      initializeReCaptcha(options).then((wrapper) => {
+        thenAction(wrapper)
+      }).catch((error) => {
+        catchAction(error)
+      })
+    } else {
+      app.config.globalProperties.$captchaOptions = options
+      app.config.globalProperties.$loadRecaptchaAfterSetup = async (siteKey: string): Promise<any> => {
+        let optionsAsync = app.config.globalProperties.$captchaOptions
+        if (typeof siteKey !== 'undefined' && typeof optionsAsync === 'undefined') {
+          optionsAsync = {}
+        }
+        optionsAsync.siteKey = siteKey
+        await initializeReCaptcha(optionsAsync).then((wrapper) => {
+          thenAction(wrapper)
+        }).catch((error) => {
+          catchAction(error)
+        })
+      }
+    }
 
     app.provide(VueReCaptchaInjectKey, {
       instance,
